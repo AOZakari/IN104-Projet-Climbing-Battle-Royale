@@ -49,7 +49,7 @@ Vous allez poser les bases de votre simulateur d’escalade : définir et manipu
 
 ## 💻 Compilation
 
-Completez pui utilisez le Makefile de la semaine 1 :
+Completez puis utilisez le Makefile de la semaine 1 :
 
 ```bash
 make -f Makefile
