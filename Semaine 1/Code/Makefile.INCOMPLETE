@@ -1,0 +1,9 @@
+CC = #TODO
+CFLAGS = -Wall -Wextra -I.
+
+#TODO
+
+all: #TODO
+
+clean:
+	#TODO
