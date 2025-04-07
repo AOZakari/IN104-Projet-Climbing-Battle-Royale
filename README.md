@@ -111,12 +111,12 @@ Chaque mur sera **converti en graphe** :
 
 | Critère                        | Points |
 |-------------------------------|--------|
-| Fonctionnement technique      | 30%    |
-| Algorithmes & graphe          | 20%    |
-| IA et prise de décision       | 20%    |
-| Respect des contraintes       | 10%    |
-| Rapport + soutenance          | 10%    |
-| Performance tournoi           | 10%    |
+| Fonctionnement technique      | TBD%   |
+| Algorithmes & graphe          | TBD%   |
+| IA et prise de décision       | TBD%   |
+| Respect des contraintes       | TBD%   |
+| Rapport + soutenance          | TBD%   |
+| Performance tournoi           | BONUS  |
 
 ---
 
