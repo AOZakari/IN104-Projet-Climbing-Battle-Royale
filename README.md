@@ -130,3 +130,10 @@ Chaque mur sera **converti en graphe** :
 ---
 
 Bonne grimpe à tous, et que le meilleur grimpeur gagne ! 🧗‍♀️
+
+---
+
+## 📧 Contact
+
+- Chargé TP: zakari.aitouazzou@telecom-paris.fr
+- Responsable du cours: sao-mai.nguyen@ensta-paris.fr
