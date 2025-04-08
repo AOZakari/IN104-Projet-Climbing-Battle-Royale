@@ -52,12 +52,12 @@ Développer une **intelligence artificielle grimpeuse** en C capable de :
 
 | Critère                         | Pondération |
 |---------------------------------|-------------|
-| Fonctionnement du code          | 30%         |
-| Algorithmes et IA               | 20%         |
-| Qualité des murs                | 10%         |
-| Respect des règles              | 10%         |
-| Documentation & oral            | 10%         |
-| Résultats au tournoi            | 20%         |
+| Fonctionnement du code          | TBD%        |
+| Algorithmes et IA               | TBD%        |
+| Qualité des murs                | TBD%        |
+| Respect des règles              | TBD%        |
+| Documentation & oral            | TBD%        |
+| Résultats au tournoi            | BONUS       |
 
 ---
 
