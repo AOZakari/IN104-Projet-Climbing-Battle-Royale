@@ -23,16 +23,54 @@
 | Statistique     | Impact direct dans `can_climb(...)`                                         |
 |-----------------|-----------------------------------------------------------------------------|
 | **Force**       | Utilisation de Crimps (min 15), pénalité si < 12                           |
-| **Endurance**   | Détermine le nombre max d’actions (fatigue > 100 → chute)                 |
+| **Endurance**   | Détermine le nombre max d’actions (fatigue > (100 + endurance * 2) → chute)                 |
 | **Équilibre**   | Permet de tenir les Slopers (min 15), facilite les appuis techniques       |
-| **Souplesse**   | Allonge la **portée** des mouvements (portée = base + `souplesse/10.0`)   (base =  `taille/5`) |
+| **Souplesse**   | Allonge la **portée** des mouvements                                       |
 | **Explosivité** | Nécessaire pour Dyno (>= 20), enchaînements dynamiques                    |
-| **Taille**      | Influence la **portée max** (`sqrt(dx²+dy²) <= taille/5 + souplesse/10`)   |
+| **Taille**      | Définit la **portée de base** (`portée_base = taille / 5.0`)               |
 | **Coordination**| Nécessaire pour Dyno (>= 15), et pour transitions rapides                  |
 
 ---
 
+## 📐 Calcul de portée maximale
+
+```c
+portée_maximale = (taille / 5.0) + (souplesse / 10.0)
+```
+
+- **taille / 5.0** = portée de base biomécanique
+- **souplesse / 10.0** = bonus de mobilité
+
+Le grimpeur peut atteindre une prise `B` depuis `A` si :
+
+```c
+sqrt((xB - xA)^2 + (yB - yA)^2) <= portée_maximale
+```
+
+---
+
 ## 🧮 Fatigue : coût de chaque prise
+
+### 🏋️ Relation entre Endurance et Fatigue
+
+L'endurance augmente la **tolérance maximale** à la fatigue :
+
+```
+seuil_fatigue_max = 100 + endurance * 2
+```
+
+Par exemple :
+
+| Endurance | Seuil de fatigue max |
+|-----------|----------------------|
+| 10        | 120                  |
+| 20        | 140                  |
+| 30        | 160                  |
+| 40        | 180                  |
+
+Cela permet à un grimpeur endurant de supporter davantage de prises coûteuses avant de tomber.
+
+
 
 ```c
 fatigue += hold->difficulty * fatigue_modifier(hold_type);
@@ -46,7 +84,7 @@ fatigue += hold->difficulty * fatigue_modifier(hold_type);
 | Dyno    | x2.0                     |
 | Jug     | x0.5 (et réduit fatigue totale de 15) |
 
-- Si `fatigue > 100`, le grimpeur échoue.
+- Si `fatigue > (100 + endurance * 2)`, le grimpeur échoue.
 
 ---
 
@@ -78,7 +116,7 @@ float fatigue_modifier(HoldType t);
 if (!can_reach(prev, curr, climber)) return 0;
 if (!can_place_hand(climber, curr)) return 0;
 fatigue += hold->difficulty * fatigue_modifier(hold->type);
-if (fatigue > 100) return 0;
+if (fatigue > (100 + endurance * 2)) return 0;
 ```
 
 Ces règles forment le socle du moteur de validation pour chaque grimpeur IA. Elles doivent être vérifiées pour **chaque mouvement** dans le graphe, et permettront aux équipes d’optimiser leurs profils et parcours.
