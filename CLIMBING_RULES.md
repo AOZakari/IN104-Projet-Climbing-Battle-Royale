@@ -25,7 +25,7 @@
 | **Force**       | Utilisation de Crimps (min 15), pénalité si < 12                           |
 | **Endurance**   | Détermine le nombre max d’actions (fatigue > 100 → chute)                 |
 | **Équilibre**   | Permet de tenir les Slopers (min 15), facilite les appuis techniques       |
-| **Souplesse**   | Allonge la **portée** des mouvements (portée = base + `souplesse/10.0`)    |
+| **Souplesse**   | Allonge la **portée** des mouvements (portée = base + `souplesse/10.0`)   (base =  `taille/5`) |
 | **Explosivité** | Nécessaire pour Dyno (>= 20), enchaînements dynamiques                    |
 | **Taille**      | Influence la **portée max** (`sqrt(dx²+dy²) <= taille/5 + souplesse/10`)   |
 | **Coordination**| Nécessaire pour Dyno (>= 15), et pour transitions rapides                  |
