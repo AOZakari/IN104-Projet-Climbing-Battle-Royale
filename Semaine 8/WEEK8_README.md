@@ -65,7 +65,7 @@ make -f Makefile
 
 ---
 
-## 🎤 Soutenance (optionnelle)
+## 🎤 Soutenance
 
 À préparer en groupe ou individuellement :
 - Présentation de votre stratégie IA
